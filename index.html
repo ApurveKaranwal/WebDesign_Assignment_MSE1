@@ -1,438 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Aurora Journeys - Bespoke Global Travel</title>
-    <style>
-        /* New Global Reset and Base Styles */
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f8fcfb; /* Very light, cool off-white */
-            color: #36454F; /* Charcoal Gray */
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1, h2, h3 {
-            color: #004d40; /* Dark Teal/Green */
-            font-family: 'Arial', sans-serif;
-            border-bottom: 2px solid #b2dfdb;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #00796b; /* Bright Teal */
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #4db6ac; /* Lighter Teal */
-            text-decoration: underline;
-        }
-
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #e0e0e0;
-            margin: 40px 0;
-        }
-
-        /* Header & Footer Styling */
-        header, footer {
-            background-color: #004d40; /* Dark Teal */
-            color: #fff;
-            padding: 25px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            color: #e0f2f1; /* Very light accent */
-            border-bottom: none;
-            font-size: 2.5em;
-            margin: 0 0 5px 0;
-        }
-        
-        header h2 {
-            color: #b2dfdb;
-            font-weight: normal;
-            font-size: 1.2em;
-            margin: 0;
-            border-bottom: none;
-        }
-
-        marquee {
-            color: #ffcc80; /* Gold/Orange accent */
-            font-weight: bold;
-            padding: 5px 0;
-            background-color: #00695c;
-        }
-        
-        /* Navigation Bar (Modern List Style) */
-        nav {
-            background-color: #00695c; /* Mid Teal */
-            padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        
-        nav li {
-            display: inline;
-            margin: 0 15px;
-        }
-        
-        nav a {
-            color: #fff;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        
-        nav a:hover {
-            background-color: #004d40;
-            text-decoration: none;
-        }
-
-        /* Tables (Packages) */
-        table {
-            border-collapse: collapse;
-            margin: 20px 0;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        th, td {
-            border: 1px solid #e0e0e0;
-            padding: 15px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #4db6ac; /* Lighter Teal */
-            color: white;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f1f8e9; /* Lightest Green/Gray */
-        }
-
-        tr:hover {
-            background-color: #c8e6c9; /* Soft Green highlight */
-        }
-        
-        td strong {
-            color: #ff6f00; /* Orange Price Highlight */
-            font-size: 1.1em;
-        }
-
-        /* Form Styling */
-        form {
-            background-color: #e0f2f1; /* Pale Mint Background */
-            padding: 30px;
-            border-radius: 10px;
-            width: 90%;
-            margin: 20px auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        fieldset {
-            border: 1px solid #004d40;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        legend {
-            font-weight: bold;
-            color: #004d40;
-            padding: 0 10px;
-            font-size: 1.1em;
-        }
-
-        input[type="text"], input[type="tel"], input[type="email"], input[type="number"], input[type="date"], select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #b2dfdb;
-            border-radius: 5px;
-            box-sizing: border-box;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            font-family: inherit;
-        }
-        
-        /* Form Buttons */
-        input[type="submit"], input[type="reset"] {
-            background-color: #00796b;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 15px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        input[type="submit"]:hover, input[type="reset"]:hover {
-            background-color: #004d40;
-        }
-
-        /* Gallery */
-        .gallery-item {
-            display: inline-block;
-            width: 30%;
-            text-align: center;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        img {
-            border-radius: 8px;
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 10px auto;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: transform 0.4s;
-        }
-
-        img:hover {
-            transform: scale(1.03) rotate(1deg);
-        }
-
-        /* Lists (Tips) */
-        ul, ol {
-            padding-left: 25px;
-            margin-bottom: 20px;
-        }
-        
-        ul li, ol li {
-            margin-bottom: 8px;
-        }
-        
-        /* Address/Contact */
-        address {
-            font-style: normal;
-            background-color: #fff9e6;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 5px solid #ffcc80;
-        }
-
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - WanderLust</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Aurora Journeys 🌌</h1>
-            <h2>"Curating Experiences Under the Midnight Sky"</h2>
-        </div>
-        <marquee behavior="slide" direction="left" scrollamount="4">
-            *** LUXURY UPGRADE: Book any package and receive a complimentary private transfer upon arrival! ***
-        </marquee>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#packages">Tour Packages</a></li>
-            <li><a href="#booking">Book Now</a></li>
-            <li><a href="#tips">Travel Guide</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <div class="container">
+    <div class="login-wrapper">
+        <div class="login-container">
+            <h2>Welcome Back</h2>
+            <p>Sign in to plan your next adventure.</p>
+            
+            <form onsubmit="return loginUser(event)">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="admin" required />
+                </div>
+                
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="123456" required />
+                    <small id="error-msg" style="color: red; display: none;">Password must be at least 6 characters.</small>
+                </div>
 
-        <section id="about">
-            <h2>🤝 About Aurora Journeys</h2>
-            <p>
-                Aurora Journeys specializes in bespoke, high-end travel to unique and breathtaking global destinations. 
-                We move beyond typical itineraries to create deeply personal adventures, focusing on sustainable tourism
-                and exclusive local access. We don't just book trips; we craft legacies.
-            </p>
-            <p>
-                Our expertise lies in luxury eco-tours, remote wilderness expeditions, and culturally immersive journeys. 
-                Trust our dedicated travel architects to design your next unforgettable escape.
-            </p>
-            <hr>
-        </section>
-
-        <section id="packages">
-            <h2>✈️ Bespoke Tour Packages</h2>
-            <p>Discover our signature collections. All journeys include premium flights, 5-star accommodation, and all-inclusive guided activities.</p>
-            <table>
-                <tr>
-                    <th>Package Code</th>
-                    <th>Theme</th>
-                    <th>Duration</th>
-                    <th>Highlights</th>
-                    <th>Starting Price</th>
-                </tr>
-
-                <tr>
-                    <td>AJ-AL01</td>
-                    <td>Arctic Lights Quest</td>
-                    <td>6 Days / 5 Nights</td>
-                    <td>**Tromsø, Norway:** Private Cabin Stay, Husky Sledding, Expert Aurora Photography Workshop.</td>
-                    <td><strong>$3,899</strong></td>
-                </tr>
-
-                <tr>
-                    <td>AJ-EA02</td>
-                    <td>East Africa Grand Safari</td>
-                    <td>8 Days / 7 Nights</td>
-                    <td>**Masai Mara, Kenya:** Private Tented Camp, Daily Game Drives with Senior Ranger, Bush Dinners.</td>
-                    <td><strong>$5,750</strong></td>
-                </tr>
-
-                <tr>
-                    <td>AJ-IP03</td>
-                    <td>Inca & Pacific Explorer</td>
-                    <td>14 Days / 13 Nights</td>
-                    <td>**Peru & Ecuador:** Machu Picchu Private Tour, Galapagos Cruise, Lima Culinary Experience.</td>
-                    <td><strong>$6,200</strong></td>
-                </tr>
-
-                <tr>
-                    <td>AJ-AH04</td>
-                    <td>Asian Heritage Trail</td>
-                    <td>10 Days / 9 Nights</td>
-                    <td>**Japan & Vietnam:** Kyoto Zen Gardens, Ha Long Bay Yacht Cruise, Tokyo Michelin Dining.</td>
-                    <td><strong>$4,999</strong></td>
-                </tr>
-            </table>
-            <center>
-                <a href="#booking" style="color:#004d40; font-weight: bold;">➡️ Request a Detailed Itinerary or Check Availability!</a>
-            </center>
-            <hr>
-        </section>
-
-        <section id="booking">
-            <h2>📝 Design Your Journey</h2>
-            <p>Complete this form to start a conversation with a dedicated travel architect.</p>
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Personal Contact Information</legend>
-                    <table border="0" cellpadding="5" cellspacing="0" width="100%">
-                        <tr>
-                            <td><label for="fname">Full Name:</label></td>
-                            <td><input type="text" id="fname" name="fullname" placeholder="John Smith" required></td>
-                        </tr>
-                        <tr>
-                            <td><label for="phone">Phone Number:</label></td>
-                            <td><input type="tel" id="phone" name="phone" placeholder="(555) 123-4567"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="email">Email Address:</label></td>
-                            <td><input type="email" id="email" name="email" placeholder="email@example.com" required></td>
-                        </tr>
-                    </table>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Travel Requirements</legend>
-                    <p>
-                        <label for="package">Select an Area of Interest:</label><br>
-                        <select id="package" name="package">
-                            <option value="AJ-AL01">AJ-AL01 Arctic Lights Quest</option>
-                            <option value="AJ-EA02">AJ-EA02 East Africa Grand Safari</option>
-                            <option value="AJ-IP03">AJ-IP03 Inca & Pacific Explorer</option>
-                            <option value="AJ-AH04">AJ-AH04 Asian Heritage Trail</option>
-                            <option value="custom">Bespoke / Custom Itinerary</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="travelers">Number of Travelers (Adults):</label>
-                        <input type="number" id="travelers" name="travelers" min="1" value="2" required>
-                    </p>
-                    <p>
-                        <label for="dates">Preferred Departure Window:</label><br>
-                        <input type="date" id="dates" name="dates">
-                    </p>
-                    <p>
-                        <label for="notes">Bespoke Details / Special Requests:</label><br>
-                        <textarea id="notes" name="notes" rows="6" placeholder="e.g., Dietary restrictions, interest in specific activities, maximum budget."></textarea>
-                    </p>
-                </fieldset>
-                <center>
-                    <input type="submit" value="Submit Journey Inquiry">
-                    <input type="reset" value="Clear Form">
-                </center>
+                <button type="submit" class="btn-login">Login</button>
+                
+                <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
             </form>
-            <hr>
-        </section>
+        </div>
+    </div>
 
-        <section id="tips">
-            <h2>💡 Your Luxury Travel Guide</h2>
-            <h3>The Aurora Approach</h3>
-            <ul>
-                <li>**Digital Concierge:** Download our pre-trip app for all itinerary, flight, and hotel details.</li>
-                <li>**VIP Immigration:** We arrange fast-track service at select international airports.</li>
-                <li>**24/7 Support:** Our global team is available around the clock for any emergencies or last-minute changes.</li>
-            </ul>
+    <script>
+        function loginUser(event) {
+            // 1. Prevent the form from refreshing the page immediately
+            event.preventDefault();
 
-            <h3>Essential Preparation</h3>
-            <ol>
-                <li>**Medication & Wellness:** Pack a small first-aid kit and any necessary prescription medications in your carry-on luggage.</li>
-                <li>**Local Currency:** Though most things can be charged, always carry a small amount of local currency for markets or tips.</li>
-                <li>**Learn a Greeting:** Knowing how to say "hello" and "thank you" in the local language shows respect and opens doors.</li>
-            </ol>
-            <hr>
-        </section>
+            // 2. Get the values
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
 
-        <section id="gallery">
-            <h2>📸 Handpicked Destinations</h2>
-            <div style="text-align: center;">
-                <div class="gallery-item">
-                    <img src="norway_aurora.jpg" alt="Northern Lights in Norway" width="300" height="200">
-                    <p><strong>Norway: Arctic Night Magic</strong><br>The heart of our signature quest.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="santorini_greece.jpg" alt="Galapagos Islands" width="300" height="200">
-                    <p><strong>Ecuador: Galapagos Wildlife</strong><br>Untouched marine biodiversity.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="african_safari.jpg" alt="Safari jeep watching elephants" width="300" height="200">
-                    <p><strong>Kenya: Serenity of the Savannah</strong><br>An intimate wildlife experience.</p>
-                </div>
-            </div>
-            <hr>
-        </section>
+            // 3. Validation Logic
+            if (pass.length < 6) {
+                // Show error if password is too short
+                errorMsg.style.display = 'block';
+                return false;
+            } else {
+                // Hide error if valid
+                errorMsg.style.display = 'none';
+                
+                // 4. Success Alert
+                alert("Login Successful! Welcome, " + user);
 
-        <section id="contact">
-            <h2>📞 Connect with Aurora Journeys</h2>
-            <address>
-                <strong>Aurora Journeys Global Headquarters</strong><br>
-                100 Stellar Way, Penthouse Suite 10<br>
-                Prestige City, Planet Earth 90210<br>
-                Phone: (555) 800-AURA (2872)<br>
-                Email: <a href="mailto:concierge@aurorajourneys.com">concierge@aurorajourneys.com</a>
-            </address>
-            <hr>
-        </section>
-    </div> <footer>
-        <p>&copy; 2025 Aurora Journeys. All rights reserved. | <a href="#about" style="color: #fff;">Luxury Travel</a> | <a href="#contact" style="color: #fff;">Consultation</a></p>
-        <p><small style="color: #b2dfdb;">Disclaimer: Prices are indicative and customized based on preferred dates and services.</small></p>
-    </footer>
+                // 5. Redirect to Home Page (index.html is the standard name for home)
+                window.location.href = "home.html"; 
+                return true;
+            }
+        }
+    </script>
 
 </body>
 </html>

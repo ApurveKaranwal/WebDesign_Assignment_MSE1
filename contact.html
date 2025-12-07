@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - VoyageVista</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Voyage<span class="highlight">Vista</span>.</h1>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header" style="background-image: url('https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&w=1600&q=80');">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2>Get In Touch</h2>
+                <p>We are here to help you plan your next big adventure.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="container" style="padding: 50px 20px;">
+        <div class="split-layout">
+            
+            <div class="about-text">
+                <h2>Contact Information</h2>
+                <p>Have questions? Reach out to us directly or fill out the form.</p>
+                <br>
+                <ul style="line-height: 2.5;">
+                    <li><i class="fas fa-map-marker-alt highlight"></i> 123 Travel Street, New York, NY</li>
+                    <li><i class="fas fa-phone highlight"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-envelope highlight"></i> support@VoyageVista.com</li>
+                </ul>
+            </div>
+
+            <div class="about-image" style="background: #f4f4f4; padding: 30px; border-radius: 10px;">
+                <h3 style="margin-bottom: 20px;">Send a Message</h3>
+                
+                <form id="contactForm" class="contact-form">
+                    <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                    <select style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option>General Inquiry</option>
+                        <option>Booking Request</option>
+                        <option>Support</option>
+                    </select>
+                    <textarea placeholder="Message" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Poppins', sans-serif;"></textarea>
+                    
+                    <button type="submit" class="btn-nav" style="border: none; cursor: pointer; width: 100%; font-size: 1rem;">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>VoyageVista Travel Agency &copy; 2025. All rights reserved.</p>
+            <div class="socials">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Select the form by its ID
+        const form = document.getElementById('contactForm');
+
+        // 2. Listen for the 'submit' event
+        form.addEventListener('submit', function(event) {
+            
+            // 3. Prevent the default behavior (reloading the page)
+            event.preventDefault(); 
+
+            // 4. Show the alert
+            alert("Submitted Successfully! We will contact you soon.");
+
+            // 5. Clear the form fields (optional)
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
