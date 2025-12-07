@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
     <div class="login-wrapper">
         <div class="login-container">
             <h2>Welcome Back</h2>
@@ -18,13 +17,14 @@
             <form onsubmit="return loginUser(event)">
                 <div class="input-group">
                     <label>Username</label>
-                    <input type="text" id="username" placeholder="admin" required />
+                    <input type="text" id="username" placeholder="admin" />
+                    <small id="username-error" style="color: red; display: none; margin-top: 5px;">Error message here.</small>
                 </div>
                 
                 <div class="input-group">
                     <label>Password</label>
-                    <input type="password" id="password" placeholder="123456" required />
-                    <small id="error-msg" style="color: red; display: none;">Password must be at least 6 characters.</small>
+                    <input type="password" id="password" placeholder="123456" />
+                    <small id="password-error" style="color: red; display: none; margin-top: 5px;">Error message here.</small>
                 </div>
 
                 <button type="submit" class="btn-login">Login</button>
@@ -36,29 +36,59 @@
 
     <script>
         function loginUser(event) {
-            // 1. Prevent the form from refreshing the page immediately
+            // 1. Prevent form submission
             event.preventDefault();
 
-            // 2. Get the values
-            const user = document.getElementById('username').value;
-            const pass = document.getElementById('password').value;
-            const errorMsg = document.getElementById('error-msg');
+            // 2. Get elements and values
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const userVal = usernameInput.value.trim(); // trim() removes whitespace
+            const passVal = passwordInput.value;
 
-            // 3. Validation Logic
-            if (pass.length < 6) {
-                // Show error if password is too short
-                errorMsg.style.display = 'block';
-                return false;
-            } else {
-                // Hide error if valid
-                errorMsg.style.display = 'none';
-                
-                // 4. Success Alert
-                alert("Login Successful! Welcome, " + user);
+            // Get error message elements
+            const userError = document.getElementById('username-error');
+            const passError = document.getElementById('password-error');
 
-                // 5. Redirect to Home Page (index.html is the standard name for home)
-                window.location.href = "home.html"; 
+            // 3. Reset previous errors (hide them initially)
+            userError.style.display = 'none';
+            passError.style.display = 'none';
+            
+            let isValid = true;
+
+            // --- VALIDATION LOGIC ---
+
+            // A. Username Validation
+            if (userVal === "") {
+                userError.textContent = "Username cannot be empty.";
+                userError.style.display = 'block';
+                isValid = false;
+            } else if (userVal.length < 3) {
+                userError.textContent = "Username must be at least 3 characters.";
+                userError.style.display = 'block';
+                isValid = false;
+            }
+
+            // B. Password Validation
+            // Logic: Must be 6+ chars AND contain at least one number
+            const hasNumber = /\d/; // Regular expression to check for a digit
+
+            if (passVal.length < 6) {
+                passError.textContent = "Password must be at least 6 characters.";
+                passError.style.display = 'block';
+                isValid = false;
+            } else if (!hasNumber.test(passVal)) {
+                passError.textContent = "Password must contain at least one number.";
+                passError.style.display = 'block';
+                isValid = false;
+            }
+
+            // 4. Final Decision
+            if (isValid) {
+                alert("Login Successful! Welcome, " + userVal);
+                window.location.href = "home.html";
                 return true;
+            } else {
+                return false;
             }
         }
     </script>
