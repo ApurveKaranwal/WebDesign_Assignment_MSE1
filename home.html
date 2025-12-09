@@ -1,129 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderlust | Premium Travel Agency</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">Voyage<span class="highlight">Vista</span>.</h1>
-            <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="pakages.html">Destinations</a></li>
-                <li><a href="mood.html">Mood Planner</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html" class="btn-nav">Book Now</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar">
+        <h1>Voyage<span class="highlight">Vista</span>.</h1>
+        <br>
+        <a href="home.html">Home</a>
+        <a href="pakages.html">Destinations</a>
+        <a href="mood.html">Mood Planner</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="btn-book">Book Now</a>
+    </div>
 
-    <header id="home" class="hero">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h2>Explore the Unseen</h2>
-                <p>Visit the world's most exotic locations with our exclusive packages.</p>
-                <div class="search-box">
-                    <input type="text" placeholder="Where do you want to go?">
-                    <button>Search</button>
-                </div>
-            </div>
+    <div style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80'); padding: 100px 20px; text-align: center; color: white;">
+        <h2 style="font-size: 40px; text-shadow: 2px 2px #000;">Explore the Unseen</h2>
+        <p style="background-color: rgba(0,0,0,0.5); display: inline-block; padding: 5px;">Visit the world's most exotic locations with our exclusive packages.</p>
+        <br><br>
+        
+        <div style="background-color: white; padding: 10px; display: inline-block; border-radius: 5px;">
+            <input type="text" placeholder="Where do you want to go?" style="padding: 10px; width: 200px;">
+            <button style="padding: 10px; background-color: #008080; color: white; border: none; cursor: pointer;">Search</button>
         </div>
-    </header>
+    </div>
 
-    <section class="features">
-        <div class="container grid-3">
-            <div class="feature-card">
-                <i class="fas fa-plane-departure"></i>
+    <br><br>
+
+    <center>
+        <div style="width: 80%;">
+            <div style="display: inline-block; width: 30%; vertical-align: top; padding: 10px;">
                 <h3>Easy Flights</h3>
                 <p>We handle all your booking needs with 0% hassle.</p>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-hotel"></i>
+            
+            <div style="display: inline-block; width: 30%; vertical-align: top; padding: 10px;">
                 <h3>Luxury Hotels</h3>
                 <p>Stay in the finest 5-star accommodations worldwide.</p>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-map-marked-alt"></i>
+
+            <div style="display: inline-block; width: 30%; vertical-align: top; padding: 10px;">
                 <h3>Tour Guides</h3>
                 <p>Local experts to guide you through every step.</p>
             </div>
         </div>
-    </section>
+    </center>
 
-    <section id="destinations" class="destinations">
-        <div class="container">
-            <h2 class="section-title">Popular Destinations</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="card-text">
-                        <span class="tag">Bestseller</span>
-                        <h3>Bali, Indonesia</h3>
-                        <p>Tropical beaches, volcanoes, and ancient temples.</p>
-                        <div class="card-footer">
-                            <span class="price">$899</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="card-text">
-                        <span class="tag">Popular</span>
-                        <h3>Venice, Italy</h3>
-                        <p>Enjoy the canals and historic architecture of Venice.</p>
-                        <div class="card-footer">
-                            <span class="price">$1,450</span>
-                        </div>
-                    </div>
-                </div>
+    <br><hr><br>
+
+    <div style="text-align: center;">
+        <h2 style="font-size: 30px;">Popular Destinations</h2>
+        
+        <div style="display: inline-block; width: 300px; border: 1px solid #ddd; margin: 20px; text-align: left; background: white;">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" width="100%" height="200">
+            <div style="padding: 15px;">
+                <span style="background-color: yellow; font-size: 12px; padding: 3px;">Bestseller</span>
+                <h3>Bali, Indonesia</h3>
+                <p>Tropical beaches, volcanoes, and ancient temples.</p>
+                <p style="color: #008080; font-weight: bold;">$899</p>
             </div>
         </div>
-    </section>
 
-    <section class="stats">
-        <div class="container">
-            <div>
-                <h2>10k+</h2>
-                <p>Happy Travelers</p>
-            </div>
-            <div>
-                <h2>500+</h2>
-                <p>Destinations</p>
-            </div>
-            <div>
-                <h2>20+</h2>
-                <p>Years Experience</p>
+        <div style="display: inline-block; width: 300px; border: 1px solid #ddd; margin: 20px; text-align: left; background: white;">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=80" width="100%" height="200">
+            <div style="padding: 15px;">
+                <span style="background-color: yellow; font-size: 12px; padding: 3px;">Popular</span>
+                <h3>Venice, Italy</h3>
+                <p>Enjoy the canals and historic architecture of Venice.</p>
+                <p style="color: #008080; font-weight: bold;">$1,450</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="newsletter">
-        <div class="container">
+    <br><br>
+
+    <div style="background-color: #008080; color: white; padding: 30px; text-align: center;">
+        <div style="display: inline-block; width: 30%;">
+            <h2>10k+</h2>
+            <p>Happy Travelers</p>
+        </div>
+        <div style="display: inline-block; width: 30%;">
+            <h2>500+</h2>
+            <p>Destinations</p>
+        </div>
+        <div style="display: inline-block; width: 30%;">
+            <h2>20+</h2>
+            <p>Years Experience</p>
+        </div>
+    </div>
+
+    <br><br>
+
+    <center>
+        <div style="width: 60%; border: 2px dashed #ccc; padding: 20px;">
             <h2>Get 20% Off Your First Trip</h2>
             <p>Join our newsletter to receive the best deals directly to your inbox.</p>
-            <form class="news-form">
-                <input type="email" placeholder="Enter your email">
-                <button type="submit">Subscribe</button>
+            <form>
+                <input type="email" placeholder="Enter your email" style="padding: 10px; width: 60%;">
+                <button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none;">Subscribe</button>
             </form>
         </div>
-    </section>
+    </center>
 
-    <footer>
-        <div class="container">
-            <p>VoyageVista Travel Agency &copy; 2025. All rights reserved.</p>
-            <div class="socials">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-    </footer>
+    <br><br>
+
+    <div class="footer">
+        <p>VoyageVista Travel Agency &copy; 2025. All rights reserved.</p>
+        <p>Facebook | Twitter | Instagram</p>
+    </div>
 
 </body>
 </html>

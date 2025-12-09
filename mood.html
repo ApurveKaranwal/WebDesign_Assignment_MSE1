@@ -1,164 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Mood Planner - Horizon</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">Voyage<span class="highlight">Vista</span>.</h1>
-            <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="pakages.html">Destinations</a></li>
-                <li><a href="mood.html">Mood Planner</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html" class="btn-nav">Book Now</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar">
+        <h1>Voyage<span class="highlight">Vista</span>.</h1>
+        <br>
+        <a href="home.html">Home</a>
+        <a href="pakages.html">Destinations</a>
+        <a href="mood.html">Mood Planner</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="btn-book">Book Now</a>
+    </div>
 
-    <header class="page-header" style="height: 40vh; background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80');">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h2>How are you feeling?</h2>
-                <p>Select your current mood and let us decide the destination.</p>
-            </div>
-        </div>
-    </header>
+    <div style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80'); padding: 80px 20px; text-align: center; color: white;">
+        <h2 style="font-size: 40px; text-shadow: 2px 2px black;">How are you feeling?</h2>
+        <p style="background-color: black; display: inline-block; padding: 5px;">Select your current mood and let us decide the destination.</p>
+    </div>
 
-    <section class="container" style="padding: 50px 0; text-align: center;">
-        
+    <br><br>
+
+    <center>
         <div class="mood-buttons">
-            <button onclick="showDestinations('stressed')" class="btn-mood stressed">
-                <i class="fas fa-spa"></i> Stressed
+            <button onclick="pickMood('stressed')" style="padding: 15px 30px; font-size: 18px; cursor: pointer; background-color: #ffcccc; border: 1px solid red;">
+                Stressed
             </button>
-            <button onclick="showDestinations('bored')" class="btn-mood bored">
-                <i class="fas fa-bolt"></i> Bored
+            
+            <button onclick="pickMood('bored')" style="padding: 15px 30px; font-size: 18px; cursor: pointer; background-color: #ffffcc; border: 1px solid orange;">
+                Bored
             </button>
-            <button onclick="showDestinations('heartbroken')" class="btn-mood broken">
-                <i class="fas fa-heart-broken"></i> Heartbroken
+            
+            <button onclick="pickMood('heartbroken')" style="padding: 15px 30px; font-size: 18px; cursor: pointer; background-color: #ccffcc; border: 1px solid green;">
+                Heartbroken
             </button>
         </div>
 
-        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
+        <br><hr><br>
 
-        <div id="results-area">
-            <h3 style="color: #777;">Select a mood above to see your perfect trip.</h3>
+        <h3 id="default-msg" style="color: grey;">Select a mood above to see your perfect trip.</h3>
+    </center>
+
+    <div id="stressed-section" style="display: none; text-align: center;">
+        <h2>Peaceful Getaways 🌿</h2>
+        
+        <div class="team-box">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80">
+            <h3>Maldives Resort</h3>
+            <p>Disconnect from the noise.</p>
+            <p><strong>$2,000</strong></p>
+            <button class="btn-book">Book Peace</button>
         </div>
 
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>VoyageVista Travel Agency &copy; 2025. All rights reserved.</p>
+        <div class="team-box">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80">
+            <h3>Swiss Alps Spa</h3>
+            <p>Fresh air and silence.</p>
+            <p><strong>$1,800</strong></p>
+            <button class="btn-book">Book Peace</button>
         </div>
-    </footer>
+
+        <div class="team-box">
+            <img src="https://images.unsplash.com/photo-1528747045269-390fe33c19f2?auto=format&fit=crop&w=800&q=80">
+            <h3>Kyoto Zen Garden</h3>
+            <p>Meditate in temples.</p>
+            <p><strong>$1,400</strong></p>
+            <button class="btn-book">Book Peace</button>
+        </div>
+    </div>
+
+    <div id="bored-section" style="display: none; text-align: center;">
+        <h2>Adventure Time ⚡</h2>
+        
+        <div class="team-box">
+            <img src="https://images.unsplash.com/photo-1521336575822-6da63fb45455?auto=format&fit=crop&w=800&q=80">
+            <h3>New Zealand Bungee</h3>
+            <p>Adrenaline rush.</p>
+            <p><strong>$1,600</strong></p>
+            <button class="btn-book">Book Adventure</button>
+        </div>
+
+        <div class="team-box">
+            <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=800&q=80">
+            <h3>Amazon Jungle Trek</h3>
+            <p>Explore the wild unknown.</p>
+            <p><strong>$1,300</strong></p>
+            <button class="btn-book">Book Adventure</button>
+        </div>
+    </div>
+
+    <div id="heartbroken-section" style="display: none; text-align: center;">
+        <h2>Healing Journeys ❤️</h2>
+        
+        <div class="team-box">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80">
+            <h3>Solo Trek in Peru</h3>
+            <p>Find yourself on the path.</p>
+            <p><strong>$1,500</strong></p>
+            <button class="btn-book">Start Healing</button>
+        </div>
+
+        <div class="team-box">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80">
+            <h3>Beach Yoga, Thailand</h3>
+            <p>New friends & golden sunsets.</p>
+            <p><strong>$900</strong></p>
+            <button class="btn-book">Start Healing</button>
+        </div>
+
+        <div class="team-box">
+            <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80">
+            <h3>Iceland Road Trip</h3>
+            <p>Just you and the open road.</p>
+            <p><strong>$2,100</strong></p>
+            <button class="btn-book">Start Healing</button>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="footer">
+        <p>VoyageVista Travel Agency &copy; 2025. All rights reserved.</p>
+    </div>
 
     <script>
-        function showDestinations(mood) {
-            const results = document.getElementById('results-area');
-            let content = "";
+        function pickMood(mood) {
+            // 1. Hide the default message
+            document.getElementById('default-msg').style.display = 'none';
 
-            if (mood === 'stressed') {
-                content = `
-                    <h2 class="section-title">Peaceful Getaways 🌿</h2>
-                    <div class="grid-3">
-                        <div class="card">
-                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80');"></div>
-                            <div class="card-text">
-                                <h3>Maldives Resort</h3>
-                                <p>Disconnect from the noise. No phones, just ocean.</p>
-                                <span class="price">$2,000</span>
-                                <a href="contact.html" class="btn-card">Book Peace</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80');"></div>
-                            <div class="card-text">
-                                <h3>Swiss Alps Spa</h3>
-                                <p>Fresh air, hot springs, and complete silence.</p>
-                                <span class="price">$1,800</span>
-                                <a href="contact.html" class="btn-card">Book Peace</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1528747045269-390fe33c19f2?auto=format&fit=crop&w=800&q=80');"></div>
-                            <div class="card-text">
-                                <h3>Kyoto Zen Garden</h3>
-                                <p>Meditate in ancient temples.</p>
-                                <span class="price">$1,400</span>
-                                <a href="contact.html" class="btn-card">Book Peace</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            } else if (mood === 'bored') {
-                content = `
-                    <h2 class="section-title">Adventure Time ⚡</h2>
-                    <div class="grid-3">
-                        <div class="card">
-                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1521336575822-6da63fb45455?auto=format&fit=crop&w=800&q=80');"></div>
-                            <div class="card-text">
-                                <h3>New Zealand Bungee</h3>
-                                <p>Adrenaline rush in the adventure capital of the world.</p>
-                                <span class="price">$1,600</span>
-                                <a href="contact.html" class="btn-card">Book Adventure</a>
-                            </div>
-                        </div>
-                        
-                         <div class="card">
-                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=800&q=80');"></div>
-                            <div class="card-text">
-                                <h3>Amazon Jungle Trek</h3>
-                                <p>Explore the wild unknown.</p>
-                                <span class="price">$1,300</span>
-                                <a href="contact.html" class="btn-card">Book Adventure</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            } else if (mood === 'heartbroken') {
-                content = `
-                    <h2 class="section-title">Healing Journeys ❤️‍🩹</h2>
-                    <div class="grid-3">
-                        <div class="card">
-                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80');"></div>
-                            <div class="card-text">
-                                <h3>Solo Trek in Peru</h3>
-                                <p>Find yourself on the path to Machu Picchu.</p>
-                                <span class="price">$1,500</span>
-                                <a href="contact.html" class="btn-card">Start Healing</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80');"></div>
-                            <div class="card-text">
-                                <h3>Beach Yoga, Thailand</h3>
-                                <p>New friends, healthy food, and golden sunsets.</p>
-                                <span class="price">$900</span>
-                                <a href="contact.html" class="btn-card">Start Healing</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80');"></div>
-                            <div class="card-text">
-                                <h3>Iceland Road Trip</h3>
-                                <p>Just you and the open road under the Northern Lights.</p>
-                                <span class="price">$2,100</span>
-                                <a href="contact.html" class="btn-card">Start Healing</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
+            // 2. Hide ALL sections first
+            document.getElementById('stressed-section').style.display = 'none';
+            document.getElementById('bored-section').style.display = 'none';
+            document.getElementById('heartbroken-section').style.display = 'none';
+
+            // 3. Show only the one the user clicked
+            if (mood == 'stressed') {
+                document.getElementById('stressed-section').style.display = 'block';
+            } 
+            else if (mood == 'bored') {
+                document.getElementById('bored-section').style.display = 'block';
+            } 
+            else if (mood == 'heartbroken') {
+                document.getElementById('heartbroken-section').style.display = 'block';
             }
-
-            // Inject the content into the page
-            results.innerHTML = content;
         }
     </script>
 

@@ -1,98 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Contact Us - VoyageVista</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">Voyage<span class="highlight">Vista</span>.</h1>
-            <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="pakages.html">Destinations</a></li>
-                <li><a href="mood.html">Mood Planner</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html" class="btn-nav">Book Now</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar">
+        <h1>Voyage<span class="highlight">Vista</span>.</h1>
+        <br>
+        <a href="home.html">Home</a>
+        <a href="pakages.html">Destinations</a>
+        <a href="mood.html">Mood Planner</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="btn-book">Book Now</a>
+    </div>
 
-    <header class="page-header" style="background-image: url('https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&w=1600&q=80');">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h2>Get In Touch</h2>
-                <p>We are here to help you plan your next big adventure.</p>
-            </div>
-        </div>
-    </header>
+    <div style="background-image: url('https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&w=1600&q=80'); padding: 80px 20px; text-align: center; color: white;">
+        <h2 style="font-size: 40px; text-shadow: 2px 2px #000;">Get In Touch</h2>
+        <p style="background-color: black; display: inline-block; padding: 5px;">We are here to help you plan your next big adventure.</p>
+    </div>
 
-    <section class="container" style="padding: 50px 20px;">
-        <div class="split-layout">
-            
-            <div class="about-text">
+    <br><br>
+
+    <table align="center" width="80%" cellpadding="20">
+        <tr>
+            <td width="50%" valign="top">
                 <h2>Contact Information</h2>
                 <p>Have questions? Reach out to us directly or fill out the form.</p>
-                <br>
-                <ul style="line-height: 2.5;">
-                    <li><i class="fas fa-map-marker-alt highlight"></i> 123 Travel Street, New York, NY</li>
-                    <li><i class="fas fa-phone highlight"></i> +1 (555) 123-4567</li>
-                    <li><i class="fas fa-envelope highlight"></i> support@VoyageVista.com</li>
-                </ul>
-            </div>
-
-            <div class="about-image" style="background: #f4f4f4; padding: 30px; border-radius: 10px;">
-                <h3 style="margin-bottom: 20px;">Send a Message</h3>
                 
-                <form id="contactForm" class="contact-form">
-                    <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
-                    <input type="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
-                    <select style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                <br>
+                
+                <p><strong>Address:</strong> 123 Travel Street, New York, NY</p>
+                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p><strong>Email:</strong> support@VoyageVista.com</p>
+            </td>
+
+            <td width="50%" bgcolor="#f4f4f4">
+                <h3>Send a Message</h3>
+                
+                <form id="myForm" onsubmit="return showMessage()">
+                    
+                    <label>Your Name:</label><br>
+                    <input type="text" name="name" required style="width: 90%; padding: 5px;">
+                    <br><br>
+
+                    <label>Your Email:</label><br>
+                    <input type="email" name="email" required style="width: 90%; padding: 5px;">
+                    <br><br>
+
+                    <label>Subject:</label><br>
+                    <select style="width: 90%; padding: 5px;">
                         <option>General Inquiry</option>
                         <option>Booking Request</option>
                         <option>Support</option>
                     </select>
-                    <textarea placeholder="Message" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Poppins', sans-serif;"></textarea>
-                    
-                    <button type="submit" class="btn-nav" style="border: none; cursor: pointer; width: 100%; font-size: 1rem;">Send Message</button>
+                    <br><br>
+
+                    <label>Message:</label><br>
+                    <textarea rows="5" style="width: 90%;"></textarea>
+                    <br><br>
+
+                    <button type="submit" class="btn-book" style="width: 100%; cursor: pointer;">Send Message</button>
                 </form>
-            </div>
+            </td>
+        </tr>
+    </table>
 
-        </div>
-    </section>
+    <br><br>
 
-    <footer>
-        <div class="container">
-            <p>VoyageVista Travel Agency &copy; 2025. All rights reserved.</p>
-            <div class="socials">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-    </footer>
+    <div class="footer">
+        <p>VoyageVista Travel Agency &copy; 2025. All rights reserved.</p>
+        
+    </div>
 
     <script>
-        // 1. Select the form by its ID
-        const form = document.getElementById('contactForm');
-
-        // 2. Listen for the 'submit' event
-        form.addEventListener('submit', function(event) {
-            
-            // 3. Prevent the default behavior (reloading the page)
-            event.preventDefault(); 
-
-            // 4. Show the alert
+        function showMessage() {
+            // Simple alert box
             alert("Submitted Successfully! We will contact you soon.");
-
-            // 5. Clear the form fields (optional)
-            form.reset();
-        });
+            
+            // This prevents the page from actually refreshing for the demo
+            return false;
+        }
     </script>
 
 </body>

@@ -1,93 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - VoyageVista</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="login-wrapper">
-        <div class="login-container">
-            <h2>Welcome Back</h2>
+    <br><br><br>
+
+    <center>
+        <div style="border: 1px solid #ccc; width: 350px; padding: 30px; background-color: white; border-radius: 10px;">
+            <h2 style="color: #008080;">Welcome Back</h2>
             <p>Sign in to plan your next adventure.</p>
             
-            <form onsubmit="return loginUser(event)">
-                <div class="input-group">
-                    <label>Email Address</label>
-                    <input type="email" id="username" placeholder="example@email.com" />
-                    <small id="username-error" style="color: red; display: none; margin-top: 5px;">Error</small>
+            <hr>
+            <br>
+
+            <form onsubmit="return validateLogin()">
+                
+                <div style="text-align: left;">
+                    <label><strong>Email Address:</strong></label><br>
+                    <input type="email" id="email" placeholder="example@email.com" style="width: 93%; padding: 8px; margin-top: 5px;">
                 </div>
                 
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" />
-                    <small id="password-error" style="color: red; display: none; margin-top: 5px;">Error</small>
+                <br>
+
+                <div style="text-align: left;">
+                    <label><strong>Password:</strong></label><br>
+                    <input type="password" id="password" placeholder="Enter password" style="width: 93%; padding: 8px; margin-top: 5px;">
                 </div>
 
-                <button type="submit" class="btn-login">Login</button>
-                <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
+                <br><br>
+
+                <button type="submit" class="btn-book" style="width: 100%; cursor: pointer; font-size: 16px;">Login</button>
+                
+                <br><br>
+                
+                <p style="font-size: 12px;">Don't have an account? <a href="#" style="color: blue;">Sign Up</a></p>
             </form>
         </div>
+    </center>
+
+    <br><br>
+
+    <div class="footer">
+        <p>VoyageVista Travel Agency &copy; 2025. All rights reserved.</p>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/zod@3.23.8/lib/index.umd.min.js"></script>
-
     <script>
-        function loginUser(event) {
-            event.preventDefault();
+        function validateLogin() {
+            // Get values from inputs
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
 
-            const { z } = window.Zod;
+            // 1. Check if email is empty
+            if (email == "") {
+                alert("Please enter your email address.");
+                return false; // Stops the form from submitting
+            }
 
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value;
-
-            const userError = document.getElementById("username-error");
-            const passError = document.getElementById("password-error");
-
-            // Reset errors
-            userError.style.display = "none";
-            passError.style.display = "none";
-
-            // ✅ UPGRADED VALIDATION SCHEMA
-            const loginSchema = z.object({
-                username: z.string()
-                    .nonempty("Email cannot be empty")
-                    .email("Please enter a valid email address"), // Uses Zod's built-in email validator
-
-                password: z.string()
-                    .min(8, "Password must be at least 8 characters")
-                    .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
-                    .regex(/[a-z]/, "Password must contain at least one lowercase letter")
-                    .regex(/[0-9]/, "Password must contain at least one number")
-                    .regex(/[\W_]/, "Password must contain at least one special character (@, #, $, etc.)")
-            });
-
-            // Validate
-            const result = loginSchema.safeParse({ username, password });
-
-            if (!result.success) {
-                const errors = result.error.format();
-
-                if (errors.username?._errors.length) {
-                    userError.textContent = errors.username._errors[0];
-                    userError.style.display = "block";
-                }
-
-                if (errors.password?._errors.length) {
-                    passError.textContent = errors.password._errors[0];
-                    passError.style.display = "block";
-                }
-
+            // 2. Check if password is empty
+            if (password == "") {
+                alert("Please enter your password.");
                 return false;
             }
 
-            // ✅ Success
-            alert("Login Successful! Welcome, " + username);
-            window.location.href = "home.html";
-            return true;
+            // 3. Very basic password check (Student level logic)
+            if (password.length < 5) {
+                alert("Password must be at least 5 characters long.");
+                return false;
+            }
+
+            // If everything is okay
+            alert("Login Successful! Welcome " + email);
+            window.location.href = "home.html"; // Redirect to home
+            return false; // We return false here just to prevent the actual form submit refresh for the demo
         }
     </script>
 
